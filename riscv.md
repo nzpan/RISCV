@@ -44,17 +44,6 @@ ARM, RX, RH850, x86, x86-64
 [RX RXv3命令セットアーキテクチャ](https://www.renesas.com/in/ja/search?keywords=RXv3%E5%91%BD%E4%BB%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
 
 
-## カスタマイズ性
-- FPUの搭載非搭載などを選択できる
-
-[extensions](https://en.wikipedia.org/wiki/RISC-V)
-
-独自命令を追加できる
-ARMを使う場合
-
-もともとparallel computing laboratryでつくっていた。
-many coreのシステムをつくろうとしている人たちもいる。
-
 # RISC-V企業
 - Andes Tech
 台湾のcpu core IPベンダ
@@ -64,26 +53,6 @@ verilogを提供[link](https://github.com/riscv/riscv-cores-list)
 chiselで開発
 
 IntelがSiFiveに20億ドルで買収提案か[記事](https://eetimes.itmedia.co.jp/ee/articles/2106/15/news056.html)
-
-# 補足情報
-## RISC-Vに興味を持ってもらって情報交換ができたらいいなというのが私の個人的な目標
-それが仕事をする上で少しでも役に立てたらいいなと。
-欲を言えばお金を稼ぐところまで考えたい。
-
-2019/12くらいにとにかく始めることが重要だったのではじめてみた。
-そこから先に進めたい。
-どうやってビジネスにするか？
-情報収集してビジネスにつながる部分を探す。
-
-## MMUについて
-memory management unit (MMU) [wiki](https://en.wikipedia.org/wiki/Memory_management_unit)
-
-- ARMでは
-Cortex-A: MMU搭載
-Cortex-M: MMU非搭載
-
-- RISC-Vでは
-
 
 ## chisel
 Scalaという言語でつくられたハードウェア記述言語。
@@ -103,53 +72,12 @@ verilogではgenerate文の記述力が貧弱なのでperlやpythonなどを使�
 
 ハードウェア記述言語Chiselをもっともっと活用するためのDiplomacy概説[youtube](https://www.youtube.com/watch?v=92rULS6OfjA&t=15s)
 
-## ライセンスについて
-　IntelとAMDは広範なクロスライセンス契約を結び、Intelが20年以上前に特許を取得したx86命令セットなどの特許技術の利用を互いに認めている。[記事](https://www.itmedia.co.jp/news/articles/0404/07/news030.html)
+## 勉強会
+risc-v.connpass.com[link](https://risc-v.connpass.com/event/)
 
-## 歴史
-https://riscv.org/about/history/
+RISC-VとChiselで学ぶ はじめてのCPU自作[link](https://gihyo.jp/book/2021/978-4-297-12305-5)
+株式会社フィックスターズRISC-V研究所 ⻄⼭悠太朗, 井⽥健太
 
-https://www.axion.zone/riscv/
+勉強会[link](https://www.youtube.com/watch?v=RPytP3YiqdY)
 
-# 疑問
-RISC-Vはimmediateをどう表現している？
-instructionに16bit immediateを埋め込んだら足りなくなっちゃう。
-16bit immediateを表現できる。
-
-ISAが違うとGCCやLLVMをどれだけ書き換えなければいけないのか？
-
-RV64も32bit固定長命令？
-そう。
-RV64I  widens  the  integer  registers  and  supported  user  address  space  to  64  bit:
-
-おそらくAndesはRTL出しなのでは？
-RTLをもらえると仮定したときにマイコン設計する際にどんな情報が必要か？
-論理合成でいうとARMとあまり変わらないか。
-設計会社全部同じ話でRISC-V core RTLをもらってどうやって設計する？
-論理合成ツールが必要。
-physical libraryが必要。fabに製造依頼。
-DFT。
-テスト方針も決めないと。
-設計するなら自分のアプリケーションの特徴を抽出してデザイン設計する。
-どんなハードウェアが必要か？どんなソフトウェアが必要か？
-
-要は必要とされる機能をもつ製品を提供する。他がマネできないとよりgood。低コストで作れればよりgood。
-XILINXもNVIDIAも株価は上がったわけで。業界を間違えなければそれだけで勝てる。ということがわかった。
-ん、待てよ。ルネサスは？
-ルネサスとNVIDIAを比べてみる。
-TSMC, ARM, Synopsysを比べると？
-業界の発展に釣られて周辺の企業も評価されるかも？
-たとえばこの3社は協業しているわけで。
-マネできないといえばプロセスルール開発はマネできない。TSMCのfabとARM artisan
-artisanはcharacterizeしてるだけなのか？
-
-## Todo
-Teamsで説明するのに赤枠をつくるとかできる？
-
-verilogで書きづらくchiselで簡潔に書ける例をつくる
-
-## 
-1. .txtを書く。
-2. vscodeで.mdにする。
-3. webにexportする。githubで公開。
 
